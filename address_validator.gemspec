@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'address_validator/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "address_validator"
+  gem.name          = "address-validator"
   gem.version       = AddressValidator::VERSION
   gem.authors       = ["robhurring"]
   gem.email         = ["robhurring@gmail.com"]
