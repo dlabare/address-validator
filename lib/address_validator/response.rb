@@ -46,6 +46,8 @@ module AddressValidator
       else
         addresses = [ AddressValidator::Address.from_xml(response['AddressKeyFormat']) ]
       end
+    rescue
+      []
     end
 
     def address

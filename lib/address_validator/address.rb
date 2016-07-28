@@ -40,19 +40,19 @@ module AddressValidator
 
     attr_accessor :name, :street1, :street2, :street3, :city, :state, :zip, :zip_extended, :country, :classification
 
-    def initialize(name: nil, street1: nil, street2: nil, street3: nil, city: nil, state: nil, zip: nil, zip_extended: nil, country: nil, classification: nil)
-      @name = name
-      @street1 = street1
-      @street2 = street2
-      @street3 = street3
-      @city = city
-      @state = state
-      @zip = zip
-      @zip_extended = zip_extended
-      @country = country
-      @classification = (classification || CLASSIFICATION_UNKNOWN).to_i
+    def initialize(params)
+      @name = params[:name]
+      @street1 = params[:street1]
+      @street2 = params[:street2]
+      @street3 = params[:street3]
+      @city = params[:city]
+      @state = params[:state]
+      @zip = params[:zip]
+      @zip_extended = params[:zip_extended]
+      @country = params[:country]
+      @classification = (params[:classification] || CLASSIFICATION_UNKNOWN).to_i
     end
-
+        
     def residential?
       classification == CLASSIFICATION_RESIDENTIAL
     end
